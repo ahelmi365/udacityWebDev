@@ -24,6 +24,9 @@ console.log("Test js is running");
  *
  */
 
+const nav_bar = document.getElementById("navbar__list");
+const all_sections = document.querySelectorAll("section");
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -37,9 +40,33 @@ console.log("Test js is running");
  */
 
 // build the nav
-
+for (let i = 0; i < all_sections.length; i++) {
+  const list_item = document.createElement("li");
+  list_item.textContent = all_sections[i].dataset.nav;
+  nav_bar.appendChild(list_item);
+}
 // Add class 'active' to section when near top of viewport
+nav_bar.addEventListener("click", function scrollTO(event) {
+  if (event.target.nodeName == "LI") {
+    // console.log(event.target.textContent);
+    const element_text_content = event.target.textContent;
+    console.log(element_text_content);
+    // get the section we want to scroll to using the data-nav attribute
+    const scroll_to_element = document.querySelector(
+      `[data-nav="${element_text_content}"]`
+    );
 
+    // get the coordinate of the section we want to scroll to
+    let rect = scroll_to_element.getBoundingClientRect();
+    // console.log(rect);
+    console.log(rect.x);
+    console.log(rect.y);
+    console.log(window.scrollY);
+    console.log(rect.top + window.scrollY);
+
+    window.scrollTo(rect.x, rect.top + window.scrollY);
+  }
+});
 // Scroll to anchor ID using scrollTO event
 
 /**
