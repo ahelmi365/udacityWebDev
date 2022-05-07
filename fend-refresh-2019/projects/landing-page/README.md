@@ -25,14 +25,17 @@ To use this project, first clone the repo on your device using the command below
 ```git clone https://github.com/navendu-pottekkat/nsfw-filter.git``` -->
 
 # Usage
-[(Back to top)](#table-of-contents)
 
 You can use the navigation bar at the top to move to specific section in this page. Or you can scroll down/up to see more details about each section.
+[(Back to top)](#table-of-contents)
+
 <!-- This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also. -->
 
 # Development
-[(Back to top)](#table-of-contents)
 When you add new section to the HTML file with a specific value the data-nav and it will automatically be added to the top navigation bar. The JS file add new sections to the navigation bar and handles the click events as well as the scroll events. When you click on a section name or scroll to specific section, this section changed to be in "Active" state.
+
+[(Back to top)](#table-of-contents)
+
 <!-- This is the place where you give instructions to developers on how to modify the code.
 You could give **instructions in depth** of **how the code works** and how everything is put together.
 You could also give specific instructions to how they can setup their development environment.
@@ -40,12 +43,11 @@ Ideally, you should keep the README simple. If you need to add more complex expl
 
 
 # Footer
-[(Back to top)](#table-of-contents)
-
 <!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
 Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
 
 Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
+[(Back to top)](#table-of-contents)
 
 <!-- Add the footer here -->
 
