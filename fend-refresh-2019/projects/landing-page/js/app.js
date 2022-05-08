@@ -32,17 +32,10 @@ const all_nav_items = document.querySelectorAll("li.nav-item");
 
 // *** Global Functions ***
 
-// function to remove "you-active-class" from all sections
-function remove_your_active_class() {
-  for (let i = 0; i < all_sections.length; i++) {
-    all_sections[i].classList.remove("your-active-class");
-  }
-}
-
-// Function to remove "active-item" class from all items in nav-bar
-function remove_active_nav_bar() {
-  for (let i = 0; i < all_nav_items.length; i++) {
-    all_nav_items[i].classList.remove("active-item");
+// Function to remove "class_name"  from "list"
+function remove_calss_from_list(list_name, class_name) {
+  for (let i = 0; i < list_name.length; i++) {
+    list_name[i].classList.remove(class_name);
   }
 }
 
@@ -60,7 +53,8 @@ nav_bar.addEventListener(
     // check if the clicked item is <li>
     if (event.target.nodeName == "LI") {
       // remove active-item class from all items in nav-bar
-      remove_active_nav_bar();
+      // remove_active_nav_bar();
+      remove_calss_from_list(all_nav_items, "active-item");
 
       // Add class 'active' to the clicked item in the nav-bar
       event.target.classList.add("active-item");
@@ -77,7 +71,8 @@ nav_bar.addEventListener(
       scroll_to_element.scrollIntoView();
 
       // remove "you-active-class" from all sections
-      remove_your_active_class();
+      // remove_your_active_class();
+      remove_calss_from_list(all_sections, "your-active-class");
 
       // set the clicked section active
       scroll_to_element.classList.add("your-active-class");
@@ -120,13 +115,15 @@ document.addEventListener(
         console.log(`section ${i + 1} is Active!`);
 
         // remove "you-active-class" from all sections
-        remove_your_active_class();
+        // remove_your_active_class();
+        remove_calss_from_list(all_sections, "your-active-class");
 
         // set the scrolled-to section to be active
         all_sections[i].classList.add("your-active-class");
 
         // remove active-item class from all items in nav-bar
-        remove_active_nav_bar();
+        // remove_active_nav_bar();
+        remove_calss_from_list(all_nav_items, "active-item");
 
         // Add active-item class to the active nav-item
         all_nav_items[i].classList.add("active-item");
