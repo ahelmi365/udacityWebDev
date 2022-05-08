@@ -53,7 +53,6 @@ nav_bar.addEventListener(
     // check if the clicked item is <li>
     if (event.target.nodeName == "LI") {
       // remove active-item class from all items in nav-bar
-      // remove_active_nav_bar();
       remove_calss_from_list(all_nav_items, "active-item");
 
       // Add class 'active' to the clicked item in the nav-bar
@@ -71,7 +70,6 @@ nav_bar.addEventListener(
       scroll_to_element.scrollIntoView();
 
       // remove "you-active-class" from all sections
-      // remove_your_active_class();
       remove_calss_from_list(all_sections, "your-active-class");
 
       // set the clicked section active
@@ -115,14 +113,12 @@ document.addEventListener(
         console.log(`section ${i + 1} is Active!`);
 
         // remove "you-active-class" from all sections
-        // remove_your_active_class();
         remove_calss_from_list(all_sections, "your-active-class");
 
         // set the scrolled-to section to be active
         all_sections[i].classList.add("your-active-class");
 
         // remove active-item class from all items in nav-bar
-        // remove_active_nav_bar();
         remove_calss_from_list(all_nav_items, "active-item");
 
         // Add active-item class to the active nav-item
