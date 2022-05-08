@@ -3,7 +3,7 @@ console.log("Test js is running");
 
 window.scroll(0, 0);
 
-//  * Define Global Variables
+//  **** Define Global Variables ***
 
 const nav_bar = document.getElementById("navbar__list");
 const all_sections = document.querySelectorAll("section");
@@ -15,7 +15,7 @@ for (let i = 0; i < all_sections.length; i++) {
   // create new <li>
   const list_item = document.createElement("li");
 
-  // set the textContext of the list-item to be the data-nav value
+  // set the textContext of the list-item to be the data-nav value of the section
   list_item.textContent = all_sections[i].dataset.nav;
 
   // Add nav-item class to be used later for styling
@@ -25,10 +25,12 @@ for (let i = 0; i < all_sections.length; i++) {
   nav_bar.appendChild(list_item);
 }
 
-// get all nav-items in a varible to add styling when clicked
+// get all nav-items in a varible to add styling when clicked later
 const all_nav_items = document.querySelectorAll("li.nav-item");
 
-// Global Functions
+/********************************************************************************/
+
+// *** Global Functions ***
 
 // function to remove "you-active-class" from all sections
 function remove_your_active_class() {
@@ -37,7 +39,7 @@ function remove_your_active_class() {
   }
 }
 
-// Function to remove active-item class from all items in nav-bar
+// Function to remove "active-item" class from all items in nav-bar
 function remove_active_nav_bar() {
   for (let i = 0; i < all_nav_items.length; i++) {
     all_nav_items[i].classList.remove("active-item");
@@ -46,9 +48,9 @@ function remove_active_nav_bar() {
 
 /********************************************************************************/
 
-// Scroll to section when the section name is clicked in the nav-bar
+// When the section name is clicked in the nav-bar, scroll to the section and set it to be Active section
 
-// add event listener when the section item is clicked in the nav-bar
+// Add event listener when the section item is clicked in the nav-bar
 nav_bar.addEventListener(
   "click",
   (setActiveOnClick = (event) => {
@@ -85,12 +87,12 @@ nav_bar.addEventListener(
 
 /********************************************************************************/
 
-// Set the section to be Active when it is in the viewport while Scrolling
+// While Scrolling, set the section to be Active when it is in the viewport
 
 // Define variables for this section
-let lastKnownScrollPosition = 0;
-let all_sections_offsetsTop = [];
-let all_sections_offsetsHeight = [];
+let lastKnownScrollPosition = 0; // to get the last known scroll position
+let all_sections_offsetsTop = []; // List of the positions of all sections
+let all_sections_offsetsHeight = []; // List of the heights of all sections
 
 // get the Positions and Heights of all sections in the page
 for (let i = 0; i < all_sections.length; i++) {
