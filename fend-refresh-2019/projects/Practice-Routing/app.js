@@ -27,32 +27,33 @@ const postData = async (url = "", data = {}) => {
 
 // //////////////////////////////////////////////////////////////
 
-// Here is the client side code that would make a GET request to the animal info API:
+// Here is the client side code that would make a GET request to the new_query info API:
 let baseURL = "https://api.nasa.gov/planetary/apod?api_key=";
 let apiKey = "0JEymXJ1FBKQtMmYINpMLQpGbTLpprad3McDEKwv";
 
 document.getElementById("generate").addEventListener("click", performAction);
 
 function performAction(e) {
-  const newAnimal = document.getElementById("query_name").value;
-  getNasaData(baseURL, newAnimal, apiKey);
+  const new_query = document.getElementById("query_name").value;
+  getNasaData(baseURL, new_query, apiKey);
 }
 
-const getNasaData = async (baseURL, animal, key) => {
+const getNasaData = async (baseURL, quer_name, key) => {
   const res = await fetch(baseURL + key);
   try {
     const data = await res.json();
     // console.log(data);
-    console.log(data[animal]);
-    data[animal]
+    console.log(data[quer_name]);
+    data[quer_name]
       ? (document.getElementById(
           "query-data"
-        ).value = `${animal.toUpperCase()}: ${data[animal]}`)
+        ).value = `${quer_name.toUpperCase()}: ${data[quer_name]}`)
       : (document.getElementById("query-data").value =
           "Nothing to show, please enter a valid data above.");
     return data;
   } catch (error) {
     console.log("error", error);
-    // appropriately handle the error
   }
 };
+
+// const getNasaData2 = async(baseURL, a);
