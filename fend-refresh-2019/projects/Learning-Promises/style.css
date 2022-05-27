@@ -1,9 +1,16 @@
+html {
+  /* font-size: 0.625; */
+}
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: lightslategrey;
+  /* background: lightslategrey; */
+  background: #2a6898;
+  /* font-size: 1.6rem; */
 }
 
 form.form-1 {
@@ -30,7 +37,6 @@ input[type="text"]:focus {
   border: 0.3px solid #555;
 }
 
-input[type="submit"],
 button[type="button"] {
   width: 100%;
   background-color: #4caf50;
@@ -42,12 +48,12 @@ button[type="button"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button[type="button"]:hover {
   background-color: #45a049;
 }
 
 textarea.query-data {
   width: 100%;
-  height: 150px;
+  /* height: 150px; */
   padding: 12px 20px;
 }
