@@ -1,5 +1,10 @@
 # Weather-Journal App Project
 
+Author: Ali Helmi
+Linkedin: https://www.linkedin.com/in/alihelmi/
+github: https://github.com/ahelmi365
+Date: 5/29/2022
+
 ## Overview
 
 This project lets us enter a valid Zipcode and your feeling then it shows you the tempreture in celsius in addition to todays date and your feeling
