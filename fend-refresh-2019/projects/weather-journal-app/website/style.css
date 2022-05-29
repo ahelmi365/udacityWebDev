@@ -62,14 +62,15 @@ button[type="button"]:hover {
 
 textarea {
     width: 100%;
-    /* height: 150px; */
     padding: 12px 20px;
 }
 
-
-#results,
-#entryHolder {
+.conclusion {
     font-size: 2rem;
+}
+
+#entryHolder {
+    font-size: 1.6rem;
 }
 
 #results {
