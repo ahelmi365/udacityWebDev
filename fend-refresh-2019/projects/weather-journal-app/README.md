@@ -10,7 +10,7 @@ Date: 5/29/2022
 
 ## Overview
 
-This project allows you to enter a valid Zipcode and your feeling then it shows you the tempreture in celsius in addition to todays date and your feeling
+This project allows you to enter a valid Zipcode and your feeling then it shows you the temperature in celsius in addition to todays date and your feeling
 
 ## Instructions
 
