@@ -60,7 +60,7 @@ async function getWeatherData(url = "/getWeatherData", fullURL) {
 }
 
 // function to hit the rout "/addData"
-async function postData(url = "/addData", data = {}) {
+const postData = async (url = "/addData", data = {}) => {
     const response = await fetch(url, {
         method: "POST",
         credentials: "same-origin",
@@ -80,15 +80,16 @@ async function postData(url = "/addData", data = {}) {
     }
 }
 
+
 // function to hit rout "/updateWeatherUI" and update the UI
 async function updateWeatherUI() {
     resultDiv.style.display = "block"; // show the result section
     const request = await fetch("/UpdateUI");
     try {
         const allData = await request.json();
-        tempUI.textContent = "Temp: " + Math.round(allData.temp) + " degrees";
-        contentUI.textContent = "Feeling is: " + allData.feeling;
-        dateUI.textContent = "Today is: " + allData.date;
+        tempUI.innerHTML = "Temp: " + Math.round(allData.temp) + " degrees";
+        contentUI.innerHTML = "Feeling is: " + allData.feeling;
+        dateUI.innerHTML = "Today is: " + allData.date;
     } catch (error) {
         console.log("error", error);
     }
