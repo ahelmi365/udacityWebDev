@@ -18,15 +18,15 @@ const cors = require('cors');
 app.use(cors());
 
 /* Initialize the main project folder*/
-app.use(express.static('website'));
+app.use(express.static('myApp'));
 
 const port = 3000;
 /* Spin up the server*/
 const server = app.listen(port, listening);
 
 function listening() {
-    // console.log(server);
-    console.log(`running on localhost: ${port}`);
+    console.log('servier is running');
+    console.log(`Server is running on localhost: ${port}`);
 };
 
 // GET route
@@ -50,4 +50,5 @@ app.post('/animal', addAnimal);
 
 function addAnimal(req, res) {
     data.push(req.body);
+    console.log(data)
 };

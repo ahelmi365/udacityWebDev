@@ -11,6 +11,7 @@ const postData = async (url = '', data = {}) => {
 
     try {
         const newData = await response.json();
+        console.log(newData);
         return newData;
     } catch (error) {
         console.log("error", error);
@@ -30,7 +31,7 @@ const retrieveData = async (url = '') => {
 // TODO-Chain your async functions to post an animal then GET the resulting data
 function postGet() {
     postData('/animal', {
-            fav: 'lion'
+            fav: 'KANARYA'
         })
         .then(function (data) {
             retrieveData('/all')
@@ -38,3 +39,6 @@ function postGet() {
 }
 // TODO-Call the chained function
 postGet()
+postData('/animal', {
+    fav: 'ddddddddddddddd'
+})
