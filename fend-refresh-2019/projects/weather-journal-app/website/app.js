@@ -5,12 +5,19 @@ let todayDate = d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear();
 const APIKEY = "b2d59b02c038df9f6951f8925559969e&units=imperial";
 const resultDiv = document.getElementById("results");
 
+const tempUI = document.getElementById("temp");
+const feelingUI = document.getElementById("feelings");
+const contentUI = document.getElementById("content");
+
+const dateUI = document.getElementById("date");
+
 document.getElementById("generate").addEventListener("click", runWeatherGetter);
 
 function runWeatherGetter(e) {
     const zipCode = document.querySelector("#zip").value;
     if (!zipCode) {
         resultDiv.style.display = "none"; // hide the result section
+        // feelingUI.value = ""; // clear the feeling content
         alert("Please enter a valid Zipcode!");
         return;
     }
@@ -42,6 +49,7 @@ async function getWeatherData(url = "/getWeatherData", fullURL) {
         if (data.cod == "404") {
             //if the entered zipcode is not valid
             resultDiv.style.display = "none"; // hide the result section
+            // feelingUI.value = ""; // clear the feeling content
             alert("Please enter a valid ZipCode!");
             return;
         } else return data;
@@ -78,14 +86,9 @@ async function updateWeatherUI() {
     const request = await fetch("/UpdateUI");
     try {
         const allData = await request.json();
-
-        document.getElementById("temp").textContent =
-            "Temp: " + Math.round(allData.temp) + " degrees";
-        allData.feeling ?
-            (document.getElementById("content").textContent =
-                "Feeling is: " + allData.feeling) :
-            "";
-        document.getElementById("date").textContent = "Today is: " + allData.date;
+        tempUI.textContent = "Temp: " + Math.round(allData.temp) + " degrees";
+        contentUI.textContent = "Feeling is: " + allData.feeling;
+        dateUI.textContent = "Today is: " + allData.date;
     } catch (error) {
         console.log("error", error);
     }
